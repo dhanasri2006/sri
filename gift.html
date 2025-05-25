@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Gift Surprise</title>
+    <style>
+        body {
+            text-align: center;
+            background: linear-gradient(to right, #ffdce0, #ffe5ec);
+            font-family: 'Arial', sans-serif;
+            padding: 40px;
+        }
+        .hidden {
+            display: none;
+        }
+        #message {
+            font-size: 1.5rem;
+            color: #5c0032;
+            margin-top: 20px;
+        }
+        #nextButton {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #f06292;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        #gift {
+            cursor: pointer;
+            width: 180px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Click the gift to open your surprise 🎁</h2>
+    <img id="gift" src="/static/images/photo6.jpeg" alt="Gift Box" onclick="showMessage()">
+
+    <div id="message" class="hidden"></div>
+    <button id="nextButton" class="hidden" onclick="location.href='/love'">Next</button>
+
+    <script>
+        const paragraph = `Happieeee happieeee happiessstttt bdayyy thangameyyyy...!! When I was in a darkness u were the light of my life...!! Every second is blessing with u...❤️Enaku life la kedaicha varam neenga...❣️love ehh venaa apdinuuu irundha oru phaseee...ungala kekkurappa kooda venumaa nu yosicha oru phaseee...but then I'm now happy happier and happiestt with u...!! 💗Unga kooda neriya time spend pannanum..neraiya share pannanum ellamey aasaiii...but na adhelaam panren aahh nu Theriyala...enaku oru bestt friend aahh irukkanum enoda soulmate...!!! 💛Na evalo sanda potaalum evalo kochikitaalum enakaaga thiruppi enta vandhu samaadhaanam paduradhu neenga dhaaaa..🤍.enaku Theriyala if I'm ur best suitable pair...but I'll surely try my best to be the one...love you lots thangooo...💓none is above u for me..!! 🧡My lifelineee...!! My soul..!! My dearest one...!! My forever...!! My extreme wealth..!! My strength...!! Whatever else..!! My everything..!!!My world..!! And Mine forever...!!!! ♾️`;
+        let i = 0;
+
+        function showMessage() {
+            document.getElementById("message").classList.remove("hidden");
+            typeEffect();
+        }
+
+        function typeEffect() {
+            if (i < paragraph.length) {
+                document.getElementById("message").innerHTML += paragraph.charAt(i);
+                i++;
+                setTimeout(typeEffect, 35); // adjust speed here
+            } else {
+                document.getElementById("nextButton").classList.remove("hidden");
+            }
+        }
+    </script>
+
+</body>
+</html>
